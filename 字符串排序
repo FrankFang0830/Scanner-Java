@@ -1,0 +1,20 @@
+/***
+https://ac.nowcoder.com/acm/contest/320/H
+对输入的字符串进行排序后输出
+***/
+import java.util.Scanner; 
+import java.util.Arrays;
+public class Main {
+  public static void main(String args[]){
+	  Scanner sc= new Scanner(System.in);
+	  int n=sc.nextInt();
+	  String[] array = new String[n];
+	  String[] finals = new String[n];
+	  for(int i=0;i<n;i++) {
+		  array[i]=sc.next();
+	  }
+	  Arrays.sort(array);  	//此时array内部已经重新排序，但是如果直接print，会出现指针地址，而不是字符串，需要找一个第三方来辅助。
+	  for (String text : array) {System.out.print(text+" ");}//把array中的每一个字符，通过for循环读出来赋值给text，循环输出
+  }
+  }
+
