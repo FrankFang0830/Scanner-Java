@@ -1,0 +1,21 @@
+import java.util.Scanner; 
+public class Practice1 {
+	 public static void main(String[] args) {
+	        System.out.println("请输入两个正整数a,b,1 <= a, b <= 10^9");
+	        Scanner scan = new Scanner(System.in);
+	        String str1 = scan.nextLine();
+	        String[] splitedArray = str1.split(" ");//分割出来的字符数组
+	        if(splitedArray.length!=2) {System.out.println("输入有误，检查输入");}
+//	        for (int i = 0; i < splitedArray.length; i++) {
+//	            System.out.println(splitedArray[i]);
+//	        }
+	        else {
+	        		int a = Integer.parseInt(splitedArray[0]);
+	        		int b = Integer.parseInt(splitedArray[1]);
+	        		if(a>=1&&b<=Math.pow(10, 9)) {//幂函数
+	        		 System.out.println(a+b);
+	        		 }
+	        		else {System.out.println("请按要求输入a,b");}
+	        }
+	    }
+  }
