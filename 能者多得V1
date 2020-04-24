@@ -5,6 +5,7 @@
 接下来的一行包含M个正整数，分别表示M个小伙伴的能力值Ai(Ai<=1000000000)。
 保证不存在两项工作的报酬相同。
 https://www.nowcoder.com/practice/46e837a4ea9144f5ad2021658cb54c4d?tpId=98&tqId=32824&tPage=1&rp=1&ru=%2Fta%2F2019test&qru=%2Fta%2F2019test%2Fquestion-ranking
+此为V1版本全部以能力和难度为两个循环嵌套，时间复杂度为O（n2），结果正确。
 ***/
 import java.util.Scanner;
 import java.util.ArrayList;
