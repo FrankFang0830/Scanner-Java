@@ -1,4 +1,4 @@
-牛客网联系地址：https://ac.nowcoder.com/acm/contest/320#question
+牛客网练习地址：https://ac.nowcoder.com/acm/contest/320#question
 
 主要为Java中Scanner类的应用
 
