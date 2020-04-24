@@ -1,0 +1,39 @@
+/**
+V2版本，不用嵌套for循环，将所有的个人能力和工作难度，放入一个数组中，Arrays.sort升序排序,利用for循环一个个遍历，设置全局变量max，
+此算法的逻辑技巧在于：先将所有个人能力以及工作升序排开，当我访问一个工作难度时，下一个永远大于等于此时的工作难度。
+满足此时能力的最大工作难度并不是最大的薪水，max值可以用来更新提取，在当前位置指针前，最大的对应薪水，如果下一个任务更难，但薪水更低则max不变。
+个人能力所对应薪水为零，不影响薪资最大值查询。但是我们需要加入个人能力，以此来找到个人能力之前，最大的工作难度。
+**/
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int jobNum = sc.nextInt();
+        int friNum = sc.nextInt();
+        int t1=0,t2=0;
+        HashMap<Integer,Integer> map = new HashMap<>();
+        int[] a = new int[jobNum+friNum];
+        int[] b = new int[friNum];
+        for(int i=0;i<jobNum;i++){
+            t1 = sc.nextInt();
+            t2 = sc.nextInt();
+            a[i] = t1;
+            map.put(t1,t2);
+        }
+        for(int i=0;i<friNum;i++){
+            t1 = sc.nextInt();
+            a[jobNum+i] = t1;
+            b[i] = t1;
+            if(!map.containsKey(t1)) map.put(t1,0);
+        }
+        Arrays.sort(a);
+        int max = 0;
+        for(int i=0;i<friNum+jobNum;i++){
+            max = Math.max(max,map.get(a[i]));
+            map.put(a[i],max);
+        }
+        for(int i=0;i<friNum;i++){
+            System.out.println(map.get(b[i]));
+        }
+    }
+}
