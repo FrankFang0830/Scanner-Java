@@ -1,0 +1,47 @@
+/***
+每个输入包含一个测试用例。
+每个测试用例的第一行包含两个正整数，分别表示工作的数量N(N<=100000)和小伙伴的数量M(M<=100000)。
+接下来的N行每行包含两个正整数，分别表示该项工作的难度Di(Di<=1000000000)和报酬Pi(Pi<=1000000000)。
+接下来的一行包含M个正整数，分别表示M个小伙伴的能力值Ai(Ai<=1000000000)。
+保证不存在两项工作的报酬相同。
+https://www.nowcoder.com/practice/46e837a4ea9144f5ad2021658cb54c4d?tpId=98&tqId=32824&tPage=1&rp=1&ru=%2Fta%2F2019test&qru=%2Fta%2F2019test%2Fquestion-ranking
+***/
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+public class Main {
+  public static void main(String args[]){
+	  Scanner sc= new Scanner(System.in);
+	  int n=sc.nextInt();
+	  int m=sc.nextInt();
+	  HashMap<Integer,Integer> map = new HashMap<>();
+	  for(int i=0;i<n;i++) {
+		  int Di=sc.nextInt();
+		  int Pi=sc.nextInt();
+		  map.put(Di, Pi);
+	  }
+//	  for (Integer values : map.values()) {
+//			System.out.println(values);
+//		}
+	   int[] ai=new int[m];
+	   for(int j=0;j<m;j++) {
+		   ai[j]=sc.nextInt();
+		   
+	   }
+	   ArrayList<Integer> trans = new ArrayList<>();
+	   
+	  for(int j=0;j<m;j++) {
+		  int maxnum=0;
+		  int maxvalue=0;
+		  	for (Integer key : map.keySet()) {        //查看map中的key or value
+		  		if(ai[j]>=key) {
+		  			if(map.get(key)>maxvalue) {
+						maxvalue=map.get(key);}
+					}
+				}
+				System.out.println(maxvalue);
+			}
+		}
+}
