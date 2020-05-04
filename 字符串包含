@@ -1,0 +1,22 @@
+/**
+牛客网地址：https://www.nowcoder.com/practice/661e24c11de64e78804fdce653dafb0e?tpId=98&tqId=32850&tPage=2&rp=8&ru=%2Fta%2F2019test&qru=%2Fta%2F2019test%2Fquestion-ranking
+输入：两个字符串（可循环输入）
+输出1:包含
+输出0:不包含
+思路：string.contains方法应用
+**/
+import java.util.Scanner;
+public class Main {
+   public static void main(String args[]) {
+	  Scanner sc=new Scanner(System.in);
+	  String s1="";
+	  String s2="";
+	  while(sc.hasNext()) {
+		  s1=sc.next();
+		  s2=sc.next();
+		  if(s1.contains(s2)||s2.contains(s1)) System.out.println(1);
+		  else System.out.println(0);
+	    }
+    }
+ }
+
