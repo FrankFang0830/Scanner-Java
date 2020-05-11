@@ -1,0 +1,38 @@
+牛客网地址：https://www.nowcoder.com/practice/cc6ad889f95c49c08da1b338dd2e07ab?tpId=98&tqId=32857&tPage=2&rp=8&ru=%2Fta%2F2019test&qru=%2Fta%2F2019test%2Fquestion-ranking
+题目描述：输入年、月、日，计算该天是本年的第几天。 
+输入： 
+包括三个整数年(1<=Y<=3000)、月(1<=M<=12)、日(1<=D<=31)。 
+输出： 
+输入可能有多组测试数据，对于每一组测试数据， 
+输出一个整数，代表Input中的年、月、日对应本年的第几天。
+
+输入：1990 9 20
+输出：263
+
+代码：import java.util.Scanner;
+//递归
+public class Main{
+
+    public static void main(String[] args){
+       int[] days= {31,28,31,30,31,30,31,31,30,31,30,31};
+       Scanner sc= new Scanner(System.in);
+       int sum=0;
+       int year=sc.nextInt();
+       int month=sc.nextInt();
+       int day=sc.nextInt();
+       if(isYear(year)==true) {
+	    	   days[1]=29;
+	       }
+       for(int i=0;i<month-1;i++) sum=sum+days[i];
+       sum=sum+day;
+       System.out.println(sum);
+        }
+    
+    public static boolean isYear(int year) {
+        if( year%400==0|| (year%4==0 && year%100!=0))
+    			return true;
+        else return false;
+    }
+    
+}
+
