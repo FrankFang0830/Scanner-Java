@@ -1,0 +1,34 @@
+牛客网地址：https://www.nowcoder.com/practice/a35ce98431874e3a820dbe4b2d0508b1?tpId=37&tqId=21225&tPage=1&rp=&ru=%2Fta%2Fhuawei&qru=%2Fta%2Fhuawei%2Fquestion-ranking
+题目描述
+写出一个程序，接受一个由字母和数字组成的字符串，和一个字符，然后输出输入字符串中含有该字符的个数。不区分大小写。
+输入描述:
+第一行输入一个有字母和数字以及空格组成的字符串，第二行输入一个字符。
+输出描述:
+输出输入字符串中含有该字符的个数。
+输入
+AaCDEF
+A
+输出
+2
+----------------大小写字母（A,a）同时认同。所以在判断时需要注意--------------
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main{
+
+    public static void main(String[] args){
+       Scanner sc = new Scanner(System.in);
+       String input0= sc.nextLine();
+       char[] input = input0.toCharArray();
+       char key= sc.next().charAt(0);
+       int count=0;
+       for(int i=0 ;i<input.length;i++) {
+    	      if(Character.isAlphabetic(input[i])  ) {
+    	    	  		if(input[i]==key || input[i]==key+32 ||input[i]+32==key) //用对应大小写字符的ASCII码相差32
+    	    	  			count++;
+    	      }
+       }
+       System.out.println(count);
+    }
+    
+}
