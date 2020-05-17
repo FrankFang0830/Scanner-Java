@@ -1,0 +1,32 @@
+牛客网地址：https://www.nowcoder.com/practice/8f3df50d2b9043208c5eed283d1d4da6?tpId=37&tqId=21228&rp=0&ru=%2Fta%2Fhuawei&qru=%2Fta%2Fhuawei%2Fquestion-ranking&tPage=1
+题目描述
+写出一个程序，接受一个十六进制的数，输出该数值的十进制表示。（多组同时输入 ）
+输入描述:
+输入一个十六进制的数值字符串。
+输出描述:
+输出该数值的十进制字符串。
+
+-----------------------decode方法说明-------------------------------------------
+主要是将输入的其他格式转换为十进制输出（接受十进制、十六进制和八进制数字。）    
+https://blog.csdn.net/caoxiaohong1005/article/details/61215582
+可以分析
+8进:010=>分析后为 8
+10进:10=>分析后为 10
+16进:#10|0X10|0x10=>分析后是 16
+
+根据要解码的 String（mn)的形式转成不同进制的数字。 
+mn由三部分组成：符号、基数说明符和字符序列。 -0X123中-是符号位，0X是基数说明符
+（0表示八进制，0x,0X，#表示十六进制，什么都不写则表示十进制），123是数字字符序列。
+
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+    	Scanner sc =new Scanner(System.in);
+    while(sc.hasNext()) {
+    		String str = sc.nextLine();  
+    		System.out.println(Integer.decode(str));
+    		}
+    }
+}
