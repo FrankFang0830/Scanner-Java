@@ -1,0 +1,40 @@
+牛客网：https://www.nowcoder.com/practice/253986e66d114d378ae8de2e6c4577c1?tpId=37&tqId=21232&rp=0&ru=%2Fta%2Fhuawei&qru=%2Fta%2Fhuawei%2Fquestion-ranking&tPage=1
+题目描述
+输入一个int型整数，按照从右向左的阅读顺序，返回一个不含重复数字的新的整数。
+输入描述:
+输入一个int型整数
+输出描述:
+按照从右向左的阅读顺序，返回一个不含重复数字的新的整数
+示例1
+输入
+9876673
+输出
+37689
+
+tips:
+如果对string对象使用indexof（）方法，参数的类型为char类型，记得一定要做类型转换char-》string。因为 “s” != 's'。
+如果不做类型转换，就会一直得到不相等的值。
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Main{
+    public static void main(String[] args){
+    	    ArrayList<String> result =new ArrayList();
+      	Scanner sc =new Scanner(System.in);
+      	String input0 = sc.next();
+      	char[] input=input0.toCharArray();
+      	for(int i=input.length-1; i>=0 ;i--) {
+      		String s =Character.toString(input[i]);
+          if(result.indexOf(s)<=-1) {
+            result.add(s);
+          }
+      	}
+      	String results="";
+      	for(int i=0; i< result.size();i++) {
+	  		results=results+result.get(i);
+	  		}
+      	System.out.println(results);
+    }
+    }
