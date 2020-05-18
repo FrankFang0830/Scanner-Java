@@ -1,0 +1,34 @@
+牛客网地址：https://www.nowcoder.com/practice/440f16e490a0404786865e99c6ad91c9?tpId=37&tqId=21238&rp=0&ru=%2Fta%2Fhuawei&qru=%2Fta%2Fhuawei%2Fquestion-ranking
+题目描述
+输入一个int型的正整数，计算出该int型数据在内存中存储时1的个数。
+输入描述:
+ 输入一个整数（int类型）
+输出描述:
+ 这个数转换成2进制后，输出1的个数
+输入
+5
+输出
+2
+先转换二进制，然后统计个数。
+二进制整型互相转换link：https://www.cnblogs.com/schoolbag/p/8746111.html
+
+import java.util.Scanner;
+
+
+public class Main{
+    public static void main(String[] args){
+    		Scanner sc = new Scanner(System.in);
+    		int num=sc.nextInt();
+        
+    		String result=Integer.toBinaryString(num);
+    		char[] results=result.toCharArray();
+        
+    		int acc=0;
+    		for(int i=0;i<results.length;i++) {
+    			if(results[i]=='1') acc++; //注意是char1
+    		}
+    		System.out.println(acc);
+    		
+    }
+   
+}
