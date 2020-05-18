@@ -1,0 +1,39 @@
+牛客网地址：https://www.nowcoder.com/practice/48b3cb4e3c694d9da5526e6255bb73c3?tpId=37&tqId=21236&rp=0&ru=%2Fta%2Fhuawei&qru=%2Fta%2Fhuawei%2Fquestion-ranking&tPage=1
+将一个英文语句以单词为单位逆序排放。例如“I am a boy”，逆序排放后为“boy a am I”
+所有单词之间用一个空格隔开，语句中除了英文字母外，不再包含其他字符
+
+接口说明
+/**
+ * 反转句子
+ * 
+ * @param sentence 原句子
+ * @return 反转后的句子
+ */
+public String reverse(String sentence);
+ 
+ 
+ 
+输入描述:
+将一个英文语句以单词为单位逆序排放。
+输出描述:
+得到逆序的句子
+
+
+import java.util.Scanner;
+
+
+public class Main{
+    public static void main(String[] args){
+    		Scanner sc = new Scanner(System.in);
+    		String input =sc.nextLine();
+    		String[] result=input.split(" ");
+    		String finals="";
+    		for(int i= result.length-1;i>0;i--) {
+    			finals=finals+result[i]+" ";
+    		}
+    		finals=finals+result[0];
+    		System.out.println(finals);
+    }
+   
+}
+
