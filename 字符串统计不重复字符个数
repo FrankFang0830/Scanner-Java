@@ -1,0 +1,39 @@
+牛客网地址：https://www.nowcoder.com/practice/eb94f6a5b2ba49c6ac72d40b5ce95f50?tpId=37&tqId=21233&rp=0&ru=%2Fta%2Fhuawei&qru=%2Fta%2Fhuawei%2Fquestion-ranking&tPage=1
+题目描述
+编写一个函数，计算字符串中含有的不同字符的个数。字符在ACSII码范围内(0~127)，换行表示结束符，不算在字符里。不在范围内的不作统计。注意是不同的字符
+输入描述:
+输入N个字符，字符在ACSII码范围内。
+输出描述:
+输出范围在(0~127)字符的个数。
+输入：abcdd
+输出：4
+
+解题思路；hashmap存储，ascii值直接作为key存入到hashmap中。因为范围0-127，所以有 0-127个key的可能性。
+但是最终存储到map中的key，是根据输入的字符串单独具体考虑的。有什么输入字符就有什么样的key。最后遍历所有的key，累计计算即可。
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+
+public class Main{
+    public static void main(String[] args){
+    		Scanner sc = new Scanner(System.in);
+    		String input =sc.nextLine();
+    		System.out.println(countNum(input));
+    }
+   public static int countNum(String s) {
+	   Map<Integer,Object> map = new HashMap<>();
+	   int num=0;
+	   char[] result=s.toCharArray();
+	   for(int i=0;i<result.length;i++) {
+		   map.put(result[i]-'0',result[i]);
+	   }
+	   for(int keys:map.keySet()) {
+		   if(keys!=0) {
+			   num=num+1;
+		   }
+	   }
+	   return num;
+   }
+}
